@@ -1,0 +1,22 @@
+pipeline 
+	{	
+	agent any
+	stages
+		{
+		stage("git")
+			{
+			steps
+				{
+				git "https://github.com/Karthikkl2001/maven_build_pip.git"
+				}
+			}
+		stage("run")
+			{
+			steps
+				{
+				sh "mvn clean"
+				sh "clean install"
+				}
+			}
+		}
+	}
